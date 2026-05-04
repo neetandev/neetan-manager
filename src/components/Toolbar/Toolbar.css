@@ -1,0 +1,134 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 18px;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-0);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.toolbar-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.toolbar-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 280px;
+  height: 28px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  transition: background-color 100ms ease, border-color 100ms ease,
+    box-shadow 100ms ease;
+}
+
+.search-input:focus-within {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.search-input-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 100%;
+  color: var(--ink-3);
+  pointer-events: none;
+}
+
+.search-input-field {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0 4px 0 0;
+  font-size: 12px;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.search-input-field::placeholder {
+  color: var(--ink-4);
+}
+
+.search-input-field::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search-input-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 3px;
+  border-radius: 4px;
+  color: var(--ink-3);
+}
+
+.search-input-clear:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+
+.view-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 2px;
+  height: 28px;
+}
+
+.view-toggle-btn {
+  width: 28px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: var(--ink-3);
+}
+
+.view-toggle-btn:hover {
+  color: var(--ink);
+}
+
+.view-toggle-btn.is-active {
+  background: var(--surface-0);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+[data-theme="dark"] .view-toggle-btn.is-active {
+  background: var(--surface-1);
+}

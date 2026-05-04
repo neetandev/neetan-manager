@@ -1,0 +1,149 @@
+.menu-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  height: 38px;
+  background: linear-gradient(to bottom, var(--surface-1), var(--surface-0));
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 50;
+}
+
+.app-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 6px;
+}
+
+.app-mark-square {
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.app-mark-name {
+  font-size: 13px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.app-mark-name strong {
+  font-weight: 700;
+}
+.app-mark-suffix {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.menu-bar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 6px;
+}
+
+.menu-bar-spacer {
+  flex: 1;
+}
+
+.menu-trigger-wrap {
+  position: relative;
+}
+
+.menu-trigger {
+  font-size: 12.5px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-control);
+  color: var(--ink-2);
+  transition: background-color 80ms ease, color 80ms ease;
+}
+
+.menu-trigger:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+
+.menu-trigger-wrap.is-open .menu-trigger {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.menu-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 200px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: var(--shadow-menu);
+  animation: menu-pop 110ms ease-out;
+  z-index: 60;
+}
+
+@keyframes menu-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: var(--ink);
+  border-radius: 4px;
+  text-align: left;
+  gap: 24px;
+}
+
+.menu-item:hover,
+.menu-item:focus-visible {
+  background: var(--accent);
+  color: #fff;
+}
+
+.menu-item-shortcut {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.menu-item:hover .menu-item-shortcut,
+.menu-item:focus-visible .menu-item-shortcut {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 4px;
+}
+
+.theme-toggle {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-control);
+  color: var(--ink-2);
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
