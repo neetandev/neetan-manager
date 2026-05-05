@@ -24,12 +24,12 @@ export function GameGrid() {
         >
           <span className="tile-cover">
             <span className="tile-cover-pill">BOX ART</span>
-            <span className="tile-year-pill">{g.year}</span>
+            <span className="tile-year-pill">{g.release_year}</span>
           </span>
           <span className="tile-meta">
-            <span className="tile-en">{g.en}</span>
-            <span className="tile-jp">{g.jp}</span>
-            <span className="tile-dev">{g.dev}</span>
+            <span className="tile-en">{g.latin_name}</span>
+            <span className="tile-jp">{g.japanese_name}</span>
+            <span className="tile-dev">{g.developer_name}</span>
           </span>
         </button>
       ))}

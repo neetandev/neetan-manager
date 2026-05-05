@@ -19,10 +19,10 @@ export function useFilteredGames(): FilteredGames {
     const filtered = trimmed
       ? forSystem.filter(
           (g) =>
-            g.en.toLowerCase().includes(trimmed) ||
-            g.jp.toLowerCase().includes(trimmed) ||
-            g.dev.toLowerCase().includes(trimmed) ||
-            String(g.year).includes(trimmed),
+            g.latin_name.toLowerCase().includes(trimmed) ||
+            g.japanese_name.toLowerCase().includes(trimmed) ||
+            g.developer_name.toLowerCase().includes(trimmed) ||
+            String(g.release_year).includes(trimmed),
         )
       : forSystem;
 
@@ -34,7 +34,7 @@ export function useFilteredGames(): FilteredGames {
 function makeComparator(key: SortKey, dir: SortDir): (a: Game, b: Game) => number {
   const sign = dir === "asc" ? 1 : -1;
   return (a, b) => {
-    if (key === "year") return sign * (a.year - b.year);
+    if (key === "release_year") return sign * (a.release_year - b.release_year);
     return sign * String(a[key]).localeCompare(String(b[key]), "en");
   };
 }

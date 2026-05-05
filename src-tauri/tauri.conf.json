@@ -12,11 +12,22 @@
   "app": {
     "windows": [
       {
+        "label": "main",
         "title": "Neetan Manager",
+        "visible": false,
         "width": 1280,
         "height": 820,
         "minWidth": 960,
         "minHeight": 640
+      },
+      {
+        "label": "setup",
+        "title": "First Setup",
+        "visible": false,
+        "width": 560,
+        "height": 380,
+        "resizable": false,
+        "center": true
       }
     ],
     "security": {

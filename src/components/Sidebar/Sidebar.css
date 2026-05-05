@@ -1,118 +1,118 @@
 .sidebar {
-  background: var(--surface-1);
-  border-right: 1px solid var(--border);
-  padding: 14px 10px;
-  overflow-y: auto;
-  min-height: 0;
+    background: var(--surface-1);
+    border-right: 1px solid var(--border);
+    padding: 14px 10px;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .sidebar-section-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--ink-3);
-  margin: 4px 8px 10px;
-  font-weight: 500;
-  text-transform: uppercase;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+    margin: 4px 8px 10px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .sidebar-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .system-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 8px;
-  border-radius: var(--radius-card);
-  border: 1px solid transparent;
-  background: transparent;
-  text-align: left;
-  color: var(--ink);
-  transition: background-color 100ms ease, border-color 100ms ease;
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: var(--radius-card);
+    border: 1px solid transparent;
+    background: transparent;
+    text-align: left;
+    color: var(--ink);
+    transition: background-color 100ms ease, border-color 100ms ease;
 }
 
 .system-card:hover {
-  background: var(--surface-hover);
+    background: var(--surface-hover);
 }
 
 .system-card.is-active {
-  background: var(--surface-2);
-  border-color: var(--border);
+    background: var(--surface-2);
+    border-color: var(--border);
 }
 
 .system-card.is-active::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 2px;
-  width: 2px;
-  border-radius: 1px;
-  background: var(--card-accent, var(--accent));
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 2px;
+    width: 2px;
+    border-radius: 1px;
+    background: var(--card-accent, var(--accent));
 }
 
 .system-tile {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 42px;
-  background: var(--surface-3);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--ink-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 42px;
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--ink-2);
 }
 
 .system-card.is-active .system-tile {
-  color: var(--ink);
+    color: var(--ink);
 }
 
 .system-illustration {
-  width: 100%;
-  height: 100%;
-  display: block;
-  padding: 4px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 4px;
 }
 
 .system-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 .system-name {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
 }
 
 .system-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--ink-3);
-  letter-spacing: 0.01em;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    letter-spacing: 0.01em;
 }
 
 .system-badge {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-2);
-  background: var(--surface-3);
-  padding: 2px 7px;
-  border-radius: 999px;
-  min-width: 26px;
-  text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-2);
+    background: var(--surface-3);
+    padding: 2px 7px;
+    border-radius: 999px;
+    min-width: 26px;
+    text-align: center;
 }
 
 .system-card.is-active .system-badge {
-  background: var(--accent-soft);
-  color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
 }

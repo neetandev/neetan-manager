@@ -1,114 +1,114 @@
 .game-table-wrap {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .game-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  font-size: 12.5px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 12.5px;
 }
 
 .game-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--surface-0);
-  /* inset shadow instead of border-bottom: sticky+border-collapse can drop the border on scroll */
-  box-shadow: inset 0 -1px 0 var(--border);
-  padding: 0;
-  text-align: left;
-  font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--surface-0);
+    /* inset shadow instead of border-bottom: sticky+border-collapse can drop the border on scroll */
+    box-shadow: inset 0 -1px 0 var(--border);
+    padding: 0;
+    text-align: left;
+    font-weight: 500;
 }
 
 .game-table .th-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  width: 100%;
-  padding: 9px 16px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink-3);
-  text-align: inherit;
-  transition: color 100ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 9px 16px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    text-align: inherit;
+    transition: color 100ms ease;
 }
 
 .game-table th.align-right .th-button {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .game-table .th-button:hover {
-  color: var(--ink-2);
+    color: var(--ink-2);
 }
 
 .game-table th.is-active .th-button {
-  color: var(--accent);
+    color: var(--accent);
 }
 
 .game-table .th-indicator {
-  font-size: 9px;
-  opacity: 0;
-  transition: opacity 100ms ease;
+    font-size: 9px;
+    opacity: 0;
+    transition: opacity 100ms ease;
 }
 
 .game-table .th-button:hover .th-indicator {
-  opacity: 0.4;
+    opacity: 0.4;
 }
 
 .game-table th.is-active .th-indicator {
-  opacity: 1;
-  color: var(--accent);
+    opacity: 1;
+    color: var(--accent);
 }
 
 .game-table tbody td {
-  padding: 9px 16px;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: var(--ink);
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--ink);
 }
 
 .game-table .cell-en {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .game-table .cell-jp {
-  font-family: var(--font-jp);
-  color: var(--ink-2);
+    font-family: var(--font-jp);
+    color: var(--ink-2);
 }
 
 .game-table .cell-dev {
-  color: var(--ink-2);
+    color: var(--ink-2);
 }
 
 .game-table .cell-year {
-  font-family: var(--font-mono);
-  color: var(--ink-3);
-  text-align: right;
+    font-family: var(--font-mono);
+    color: var(--ink-3);
+    text-align: right;
 }
 
 .game-table .game-row {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .game-table .game-row:hover {
-  background: var(--surface-hover);
+    background: var(--surface-hover);
 }
 
 .game-table .game-row.is-selected,
 .game-table .game-row.is-selected:hover {
-  background: var(--accent-soft);
+    background: var(--accent-soft);
 }
 
 .game-table .empty-row td {
-  padding: 60px 16px;
-  text-align: center;
-  font-style: italic;
-  color: var(--ink-3);
-  border-bottom: 0;
+    padding: 60px 16px;
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-3);
+    border-bottom: 0;
 }

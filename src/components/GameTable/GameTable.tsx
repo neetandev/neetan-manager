@@ -11,10 +11,10 @@ interface ColumnDef {
 }
 
 const COLUMNS: ColumnDef[] = [
-  { key: "en", label: "English Name", width: "32%", align: "left" },
-  { key: "jp", label: "Japanese Name", width: "28%", align: "left" },
-  { key: "dev", label: "Developer", width: "22%", align: "left" },
-  { key: "year", label: "Year", width: "10%", align: "right" },
+  { key: "latin_name", label: "English Name", width: "32%", align: "left" },
+  { key: "japanese_name", label: "Japanese Name", width: "28%", align: "left" },
+  { key: "developer_name", label: "Developer", width: "22%", align: "left" },
+  { key: "release_year", label: "Year", width: "10%", align: "right" },
 ];
 
 function ariaSort(active: boolean, dir: SortDir) {
@@ -43,7 +43,7 @@ export function GameTable() {
                 <th
                   key={c.key}
                   scope="col"
-                  className={`th-${c.key} align-${c.align}${isActive ? " is-active" : ""}`}
+                  className={`align-${c.align}${isActive ? " is-active" : ""}`}
                   aria-sort={ariaSort(isActive, sort.dir)}
                 >
                   <button
@@ -73,10 +73,10 @@ export function GameTable() {
                 className={`game-row${selected === g.id ? " is-selected" : ""}`}
                 onClick={() => dispatch({ type: "SET_SELECTED", id: g.id })}
               >
-                <td className="cell-en">{g.en}</td>
-                <td className="cell-jp">{g.jp}</td>
-                <td className="cell-dev">{g.dev}</td>
-                <td className="cell-year">{g.year}</td>
+                <td className="cell-en">{g.latin_name}</td>
+                <td className="cell-jp">{g.japanese_name}</td>
+                <td className="cell-dev">{g.developer_name}</td>
+                <td className="cell-year">{g.release_year}</td>
               </tr>
             ))
           )}

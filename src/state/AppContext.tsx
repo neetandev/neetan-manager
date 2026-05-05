@@ -20,7 +20,7 @@ const initialState: AppState = {
   system: "PC-9800",
   query: "",
   view: "table",
-  sort: { key: "en", dir: "asc" },
+  sort: { key: "latin_name", dir: "asc" },
   selected: null,
   modal: null,
 };

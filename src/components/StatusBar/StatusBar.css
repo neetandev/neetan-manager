@@ -1,28 +1,28 @@
 .status-bar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  height: 26px;
-  padding: 0 12px;
-  background: var(--surface-1);
-  border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-2);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 26px;
+    padding: 0 12px;
+    background: var(--surface-1);
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-2);
 }
 
 .status-left {
-  justify-self: start;
+    justify-self: start;
 }
 
 .status-center {
-  justify-self: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    justify-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .status-right {
-  justify-self: end;
-  color: var(--ink-3);
+    justify-self: end;
+    color: var(--ink-3);
 }

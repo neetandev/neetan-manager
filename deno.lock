@@ -3,14 +3,14 @@
   "specifiers": {
     "npm:@tauri-apps/api@2": "2.11.0",
     "npm:@tauri-apps/cli@2": "2.11.0",
-    "npm:@tauri-apps/plugin-opener@2": "2.5.4",
-    "npm:@types/react-dom@^19.1.6": "19.2.3_@types+react@19.2.14",
-    "npm:@types/react@^19.1.8": "19.2.14",
-    "npm:@vitejs/plugin-react@^4.6.0": "4.7.0_vite@7.3.2",
-    "npm:react-dom@^19.1.0": "19.2.5_react@19.2.5",
-    "npm:react@^19.1.0": "19.2.5",
-    "npm:typescript@~5.8.3": "5.8.3",
-    "npm:vite@^7.0.4": "7.3.2"
+    "npm:@tauri-apps/plugin-dialog@2": "2.7.1",
+    "npm:@types/react-dom@^19.2.3": "19.2.3_@types+react@19.2.14",
+    "npm:@types/react@^19.2.14": "19.2.14",
+    "npm:@vitejs/plugin-react@^4.7.0": "4.7.0_vite@7.3.2",
+    "npm:react-dom@^19.2.5": "19.2.5_react@19.2.5",
+    "npm:react@^19.2.5": "19.2.5",
+    "npm:typescript@~6.0.3": "6.0.3",
+    "npm:vite@^7.3.2": "7.3.2"
   },
   "npm": {
     "@babel/code-frame@7.29.0": {
@@ -510,8 +510,8 @@
       ],
       "bin": true
     },
-    "@tauri-apps/plugin-opener@2.5.4": {
-      "integrity": "sha512-1HnPkb+AmgO29HBazm4uPLKB+r7zzcTBW1d0fyYp1uP+jwtpoiNDGKMMzz58SFp49nOIrxdE3aUJtT57lfO9CQ==",
+    "@tauri-apps/plugin-dialog@2.7.1": {
+      "integrity": "sha512-OK1UBXYt+ojcmxMktzzuyonYIFta8CmAASpX+CA+DTGK24KlHjhYI6x2iOJ/TjZF4N7/ACK1oFmEOjIY9IhzOQ==",
       "dependencies": [
         "@tauri-apps/api"
       ]
@@ -764,8 +764,8 @@
         "picomatch"
       ]
     },
-    "typescript@5.8.3": {
-      "integrity": "sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==",
+    "typescript@6.0.3": {
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "bin": true
     },
     "update-browserslist-db@1.2.3_browserslist@4.28.2": {
@@ -801,14 +801,14 @@
       "dependencies": [
         "npm:@tauri-apps/api@2",
         "npm:@tauri-apps/cli@2",
-        "npm:@tauri-apps/plugin-opener@2",
-        "npm:@types/react-dom@^19.1.6",
-        "npm:@types/react@^19.1.8",
-        "npm:@vitejs/plugin-react@^4.6.0",
-        "npm:react-dom@^19.1.0",
-        "npm:react@^19.1.0",
-        "npm:typescript@~5.8.3",
-        "npm:vite@^7.0.4"
+        "npm:@tauri-apps/plugin-dialog@2",
+        "npm:@types/react-dom@^19.2.3",
+        "npm:@types/react@^19.2.14",
+        "npm:@vitejs/plugin-react@^4.7.0",
+        "npm:react-dom@^19.2.5",
+        "npm:react@^19.2.5",
+        "npm:typescript@~6.0.3",
+        "npm:vite@^7.3.2"
       ]
     }
   }

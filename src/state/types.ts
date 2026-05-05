@@ -1,17 +1,17 @@
 export type SystemId = "PC-9800" | "PC-8800" | "PC-8000" | "PC-6000";
 export type View = "table" | "grid";
 export type Theme = "light" | "dark";
-export type SortKey = "en" | "jp" | "dev" | "year";
+export type SortKey = "latin_name" | "japanese_name" | "developer_name" | "release_year";
 export type SortDir = "asc" | "desc";
 export type ModalKind = "settings" | "license" | "version" | "quit" | null;
 
 export interface Game {
   id: number;
   system: SystemId;
-  en: string;
-  jp: string;
-  dev: string;
-  year: number;
+  latin_name: string;
+  japanese_name: string;
+  developer_name: string;
+  release_year: number;
 }
 
 export interface SystemMeta {

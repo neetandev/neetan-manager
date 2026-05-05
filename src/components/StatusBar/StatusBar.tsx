@@ -11,7 +11,7 @@ export function StatusBar() {
 
   const selectedGame = selected != null ? GAMES.find((g) => g.id === selected) : undefined;
   const summary = `${system} · ${rows.length} of ${totalForSystem} shown`;
-  const trailer = selectedGame ? ` · ${selectedGame.en} selected` : "";
+  const trailer = selectedGame ? ` · ${selectedGame.latin_name} selected` : "";
 
   return (
     <footer className="status-bar">

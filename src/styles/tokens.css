@@ -1,67 +1,67 @@
 :root,
 :root[data-theme="light"] {
-  --bg: oklch(0.94 0.005 80);
-  --surface-0: oklch(0.985 0.004 80);
-  --surface-1: oklch(0.97 0.005 80);
-  --surface-2: oklch(1 0 0);
-  --surface-3: oklch(0.93 0.006 80);
-  --surface-hover: oklch(0.95 0.008 80);
+    --bg: oklch(0.94 0.005 80);
+    --surface-0: oklch(0.985 0.004 80);
+    --surface-1: oklch(0.97 0.005 80);
+    --surface-2: oklch(1 0 0);
+    --surface-3: oklch(0.93 0.006 80);
+    --surface-hover: oklch(0.95 0.008 80);
 
-  --ink: oklch(0.22 0.01 250);
-  --ink-2: oklch(0.42 0.01 250);
-  --ink-3: oklch(0.58 0.01 250);
-  --ink-4: oklch(0.72 0.01 250);
+    --ink: oklch(0.22 0.01 250);
+    --ink-2: oklch(0.42 0.01 250);
+    --ink-3: oklch(0.58 0.01 250);
+    --ink-4: oklch(0.72 0.01 250);
 
-  --border: oklch(0.88 0.006 80);
-  --border-strong: oklch(0.78 0.008 80);
+    --border: oklch(0.88 0.006 80);
+    --border-strong: oklch(0.78 0.008 80);
 
-  --accent: oklch(0.62 0.15 240);
-  --accent-strong: oklch(0.55 0.17 240);
-  --accent-soft: oklch(0.62 0.15 240 / 0.12);
+    --accent: oklch(0.62 0.15 240);
+    --accent-strong: oklch(0.55 0.17 240);
+    --accent-soft: oklch(0.62 0.15 240 / 0.12);
 
-  --shadow-window: 0 1px 2px rgba(0, 0, 0, 0.06),
+    --shadow-window: 0 1px 2px rgba(0, 0, 0, 0.06),
     0 24px 60px -20px rgba(0, 0, 0, 0.18);
-  --shadow-menu: 0 1px 2px rgba(0, 0, 0, 0.06),
+    --shadow-menu: 0 1px 2px rgba(0, 0, 0, 0.06),
     0 12px 28px -8px rgba(0, 0, 0, 0.18);
 
-  --radius-window: 10px;
-  --radius-card: 6px;
-  --radius-control: 5px;
-  --radius-tile: 8px;
-  --radius-modal: 10px;
+    --radius-window: 10px;
+    --radius-card: 6px;
+    --radius-control: 5px;
+    --radius-tile: 8px;
+    --radius-modal: 10px;
 
-  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic",
     sans-serif;
 
-  color-scheme: light;
+    color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --bg: oklch(0.13 0.008 250);
-  --surface-0: oklch(0.18 0.01 250);
-  --surface-1: oklch(0.16 0.009 250);
-  --surface-2: oklch(0.21 0.011 250);
-  --surface-3: oklch(0.24 0.012 250);
-  --surface-hover: oklch(0.23 0.012 250);
+    --bg: oklch(0.13 0.008 250);
+    --surface-0: oklch(0.18 0.01 250);
+    --surface-1: oklch(0.16 0.009 250);
+    --surface-2: oklch(0.21 0.011 250);
+    --surface-3: oklch(0.24 0.012 250);
+    --surface-hover: oklch(0.23 0.012 250);
 
-  --ink: oklch(0.94 0.005 250);
-  --ink-2: oklch(0.78 0.008 250);
-  --ink-3: oklch(0.62 0.01 250);
-  --ink-4: oklch(0.45 0.01 250);
+    --ink: oklch(0.94 0.005 250);
+    --ink-2: oklch(0.78 0.008 250);
+    --ink-3: oklch(0.62 0.01 250);
+    --ink-4: oklch(0.45 0.01 250);
 
-  --border: oklch(0.28 0.012 250);
-  --border-strong: oklch(0.38 0.014 250);
+    --border: oklch(0.28 0.012 250);
+    --border-strong: oklch(0.38 0.014 250);
 
-  --accent: oklch(0.72 0.15 240);
-  --accent-strong: oklch(0.78 0.16 240);
-  --accent-soft: oklch(0.72 0.15 240 / 0.18);
+    --accent: oklch(0.72 0.15 240);
+    --accent-strong: oklch(0.78 0.16 240);
+    --accent-soft: oklch(0.72 0.15 240 / 0.18);
 
-  --shadow-window: 0 1px 2px rgba(0, 0, 0, 0.4),
+    --shadow-window: 0 1px 2px rgba(0, 0, 0, 0.4),
     0 30px 70px -20px rgba(0, 0, 0, 0.55);
-  --shadow-menu: 0 1px 2px rgba(0, 0, 0, 0.5),
+    --shadow-menu: 0 1px 2px rgba(0, 0, 0, 0.5),
     0 14px 30px -8px rgba(0, 0, 0, 0.55);
 
-  color-scheme: dark;
+    color-scheme: dark;
 }

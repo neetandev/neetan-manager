@@ -1,118 +1,118 @@
 .game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
-  gap: 14px;
-  padding: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 14px;
+    padding: 18px;
 }
 
 .tile {
-  display: flex;
-  flex-direction: column;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-tile);
-  overflow: hidden;
-  text-align: left;
-  color: var(--ink);
-  transition: transform 120ms ease, border-color 100ms ease,
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-tile);
+    overflow: hidden;
+    text-align: left;
+    color: var(--ink);
+    transition: transform 120ms ease, border-color 100ms ease,
     box-shadow 120ms ease;
 }
 
 .tile:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.18);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.18);
 }
 
 .tile.is-selected {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-soft);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
 .tile-cover {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  background: repeating-linear-gradient(
-      45deg,
-      transparent 0 8px,
-      rgba(0, 0, 0, 0.06) 8px 16px
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: repeating-linear-gradient(
+            45deg,
+            transparent 0 8px,
+            rgba(0, 0, 0, 0.06) 8px 16px
     ),
     var(--surface-3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 [data-theme="dark"] .tile-cover {
-  background: repeating-linear-gradient(
-      45deg,
-      transparent 0 8px,
-      rgba(255, 255, 255, 0.05) 8px 16px
+    background: repeating-linear-gradient(
+            45deg,
+            transparent 0 8px,
+            rgba(255, 255, 255, 0.05) 8px 16px
     ),
     var(--surface-3);
 }
 
 .tile-cover-pill {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--ink-3);
-  background: var(--surface-2);
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
 }
 
 .tile-year-pill {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  background: var(--surface-2);
-  color: var(--ink-2);
-  padding: 2px 6px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background: var(--surface-2);
+    color: var(--ink-2);
+    padding: 2px 6px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
 }
 
 .tile-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 10px 11px 11px;
-  min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 11px 11px;
+    min-width: 0;
 }
 
 .tile-en,
 .tile-jp,
 .tile-dev {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tile-en {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
 }
 
 .tile-jp {
-  font-family: var(--font-jp);
-  font-size: 11px;
-  color: var(--ink-2);
+    font-family: var(--font-jp);
+    font-size: 11px;
+    color: var(--ink-2);
 }
 
 .tile-dev {
-  font-size: 11px;
-  color: var(--ink-3);
-  margin-top: 4px;
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 4px;
 }
 
 .grid-empty {
-  padding: 60px 18px;
-  text-align: center;
-  font-style: italic;
-  color: var(--ink-3);
+    padding: 60px 18px;
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-3);
 }
