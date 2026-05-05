@@ -98,7 +98,7 @@ fn lock<'a>(
     state.inner().lock().map_err(|_| AppError::Poisoned)
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn get_portable_directory(
     state: State<'_, Mutex<ApplicationState>>,
 ) -> Result<Option<PathBuf>, AppError> {
@@ -106,12 +106,12 @@ pub(crate) fn get_portable_directory(
     Ok(s.config.portable_directory_setting())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn default_portable_directory() -> Result<PathBuf, AppError> {
     Ok(std::env::current_dir()?)
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn set_portable_directory(
     state: State<'_, Mutex<ApplicationState>>,
     path: Option<String>,
@@ -142,7 +142,7 @@ pub(crate) fn set_portable_directory(
     Ok(())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn complete_first_setup(
     app: AppHandle,
     state: State<'_, Mutex<ApplicationState>>,
@@ -181,13 +181,13 @@ pub(crate) fn complete_first_setup(
     Ok(())
 }
 
-#[tauri::command(async)]
-pub(crate) fn cancel_first_setup(app: AppHandle) -> Result<(), AppError> {
+#[tauri::command]
+pub(crate) fn quit_app(app: AppHandle) -> Result<(), AppError> {
     app.exit(0);
     Ok(())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn list_games(
     state: State<'_, Mutex<ApplicationState>>,
     system: Option<String>,
@@ -200,7 +200,7 @@ pub(crate) fn list_games(
     Ok(rows.into_iter().map(GameDto::from).collect())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn get_game(
     state: State<'_, Mutex<ApplicationState>>,
     id: i64,
@@ -210,7 +210,7 @@ pub(crate) fn get_game(
     Ok(GameDto::from(row))
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn upsert_game(
     state: State<'_, Mutex<ApplicationState>>,
     game: GameUpsertDto,
@@ -240,7 +240,7 @@ pub(crate) fn upsert_game(
     }
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn delete_game(
     state: State<'_, Mutex<ApplicationState>>,
     id: i64,
@@ -253,7 +253,7 @@ pub(crate) fn delete_game(
     Ok(())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn get_game_config(
     state: State<'_, Mutex<ApplicationState>>,
     id: i64,
@@ -266,7 +266,7 @@ pub(crate) fn get_game_config(
     })
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn set_game_config(
     state: State<'_, Mutex<ApplicationState>>,
     id: i64,
@@ -279,7 +279,7 @@ pub(crate) fn set_game_config(
     Ok(())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn get_system_config(
     state: State<'_, Mutex<ApplicationState>>,
     system: String,
@@ -298,7 +298,7 @@ pub(crate) fn get_system_config(
     }
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn set_system_config(
     state: State<'_, Mutex<ApplicationState>>,
     system: String,
@@ -311,7 +311,7 @@ pub(crate) fn set_system_config(
     Ok(())
 }
 
-#[tauri::command(async)]
+#[tauri::command]
 pub(crate) fn launch_game(
     state: State<'_, Mutex<ApplicationState>>,
     id: i64,

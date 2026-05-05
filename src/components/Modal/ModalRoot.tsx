@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { useAppDispatch, useAppState } from "../../state/AppContext";
 import { LicenseModal } from "./LicenseModal";
-import { QuitModal } from "./QuitModal";
 import { SettingsModal } from "./SettingsModal";
 import { VersionModal } from "./VersionModal";
 
@@ -15,7 +14,6 @@ export function ModalRoot() {
       <SettingsModal open={modal === "settings"} onClose={close} />
       <LicenseModal open={modal === "license"} onClose={close} />
       <VersionModal open={modal === "version"} onClose={close} />
-      <QuitModal open={modal === "quit"} onClose={close} />
     </>
   );
 }

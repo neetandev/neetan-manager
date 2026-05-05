@@ -16,6 +16,6 @@ export function completeFirstSetup(path: string): Promise<void> {
   return invoke<void>("complete_first_setup", { path });
 }
 
-export function cancelFirstSetup(): Promise<void> {
-  return invoke<void>("cancel_first_setup");
+export function quitApp(): Promise<void> {
+  return invoke<void>("quit_app");
 }

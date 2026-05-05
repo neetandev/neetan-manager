@@ -3,7 +3,7 @@ export type View = "table" | "grid";
 export type Theme = "light" | "dark";
 export type SortKey = "latin_name" | "japanese_name" | "developer_name" | "release_year";
 export type SortDir = "asc" | "desc";
-export type ModalKind = "settings" | "license" | "version" | "quit" | null;
+export type ModalKind = "settings" | "license" | "version" | null;
 
 export interface Game {
   id: number;

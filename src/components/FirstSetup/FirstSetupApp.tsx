@@ -3,9 +3,9 @@ import { open } from "@tauri-apps/plugin-dialog";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { Button } from "../Modal/Button";
 import {
-  cancelFirstSetup,
   completeFirstSetup,
   defaultPortableDirectory,
+  quitApp,
 } from "../../lib/api";
 import { PORTABLE_DIRECTORY_HELP } from "../../lib/copy";
 import "./FirstSetup.css";
@@ -41,7 +41,7 @@ export function FirstSetupApp() {
     const w = getCurrentWindow();
     const unlisten = w.onCloseRequested((event) => {
       event.preventDefault();
-      void cancelFirstSetup();
+      void quitApp();
     });
     return () => {
       void unlisten.then((fn) => fn());
@@ -79,7 +79,7 @@ export function FirstSetupApp() {
 
   const onCancel = useCallback(async () => {
     try {
-      await cancelFirstSetup();
+      await quitApp();
     } catch (err) {
       setState((s) => ({ ...s, error: errorMessage(err) }));
     }

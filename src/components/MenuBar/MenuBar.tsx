@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MenuDropdown, type MenuItem } from "./MenuDropdown";
 import { ThemeToggle } from "./ThemeToggle";
 import { useAppDispatch } from "../../state/AppContext";
+import { quitApp } from "../../lib/api";
 import "./MenuBar.css";
 
 type OpenMenu = "file" | "info" | null;
@@ -22,7 +23,9 @@ export function MenuBar() {
       kind: "item",
       label: "Quit",
       shortcut: "⌘Q",
-      onSelect: () => dispatch({ type: "OPEN_MODAL", kind: "quit" }),
+      onSelect: () => {
+        void quitApp();
+      },
     },
   ];
 

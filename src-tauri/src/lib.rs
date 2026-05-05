@@ -33,7 +33,7 @@ pub fn run() {
             commands::set_portable_directory,
             commands::default_portable_directory,
             commands::complete_first_setup,
-            commands::cancel_first_setup,
+            commands::quit_app,
             commands::list_games,
             commands::get_game,
             commands::upsert_game,
