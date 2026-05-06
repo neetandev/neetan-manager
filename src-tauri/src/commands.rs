@@ -82,7 +82,7 @@ impl From<std::io::Error> for AppError {
     }
 }
 
-const VALID_SYSTEMS: &[&str] = &["PC-9800", "PC-8800", "PC-8000", "PC-6000"];
+const VALID_SYSTEMS: &[&str] = &["PC-9800"];
 
 fn validate_system(system: &str) -> Result<(), AppError> {
     if VALID_SYSTEMS.contains(&system) {

@@ -1,9 +1,17 @@
-export type SystemId = "PC-9800" | "PC-8800" | "PC-8000" | "PC-6000";
+export type SystemId = "PC-9800";
 export type View = "table" | "grid";
 export type Theme = "light" | "dark";
 export type SortKey = "latin_name" | "japanese_name" | "developer_name" | "release_year";
 export type SortDir = "asc" | "desc";
-export type ModalKind = "settings" | "license" | "version" | null;
+export type ModalKind =
+  | "settings"
+  | "license"
+  | "version"
+  | "add"
+  | "edit"
+  | "duplicate"
+  | "delete"
+  | null;
 
 export interface Game {
   id: number;

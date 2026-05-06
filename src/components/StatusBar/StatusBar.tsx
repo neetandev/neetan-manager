@@ -1,4 +1,5 @@
 import { GAMES } from "../../data/games";
+import { SYSTEMS } from "../../data/systems";
 import { useFilteredGames } from "../../hooks/useFilteredGames";
 import { useAppState } from "../../state/AppContext";
 import "./StatusBar.css";
@@ -10,7 +11,8 @@ export function StatusBar() {
   const { rows, totalForSystem } = useFilteredGames();
 
   const selectedGame = selected != null ? GAMES.find((g) => g.id === selected) : undefined;
-  const summary = `${system} · ${rows.length} of ${totalForSystem} shown`;
+  const systemName = SYSTEMS.find((s) => s.id === system)?.name ?? system;
+  const summary = `${systemName} · ${rows.length} of ${totalForSystem} shown`;
   const trailer = selectedGame ? ` · ${selectedGame.latin_name} selected` : "";
 
   return (

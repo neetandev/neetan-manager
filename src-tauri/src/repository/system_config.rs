@@ -63,11 +63,11 @@ mod tests {
     fn each_system_independent() {
         let db = Database::open_in_memory().unwrap();
         upsert(db.conn(), "PC-9800", 1, r#"{"k":"98"}"#).unwrap();
-        upsert(db.conn(), "PC-8800", 1, r#"{"k":"88"}"#).unwrap();
+        upsert(db.conn(), "PC-9800", 1, r#"{"k":"98b"}"#).unwrap();
 
         let (_, j98) = get(db.conn(), "PC-9800").unwrap().unwrap();
-        let (_, j88) = get(db.conn(), "PC-8800").unwrap().unwrap();
-        assert_eq!(j98, r#"{"k":"98"}"#);
-        assert_eq!(j88, r#"{"k":"88"}"#);
+        let (_, j98b) = get(db.conn(), "PC-9800").unwrap().unwrap();
+        assert_eq!(j98, r#"{"k":"98b"}"#);
+        assert_eq!(j98b, r#"{"k":"98b"}"#);
     }
 }

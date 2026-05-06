@@ -29,6 +29,19 @@
     animation: panel-pop 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.modal-panel-lg {
+    max-width: min(880px, calc(100vw - 64px));
+    max-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-panel-lg .modal-body {
+    max-height: none;
+    flex: 1;
+    min-height: 0;
+}
+
 @keyframes panel-pop {
     from {
         opacity: 0;
@@ -44,15 +57,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 16px;
+    padding: 14px 18px;
     border-bottom: 1px solid var(--border);
+    gap: 12px;
+}
+
+.modal-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 .modal-title {
     margin: 0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--ink);
+}
+
+.modal-subline {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .modal-close {
@@ -86,9 +116,20 @@
 .modal-footer {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 8px;
-    padding: 12px 16px;
+    padding: 12px 18px;
     border-top: 1px solid var(--border);
+    background: var(--surface-1);
+}
+
+.modal-footer-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: auto;
+    font-size: 11.5px;
+    color: var(--ink-3);
 }
 
 .kv {
@@ -247,10 +288,10 @@
 .setting-error {
     font-size: 12px;
     line-height: 1.45;
-    color: oklch(0.55 0.18 25);
+    color: var(--danger);
     padding: 8px 10px;
-    border: 1px solid color-mix(in oklab, oklch(0.55 0.18 25) 35%, var(--border));
+    border: 1px solid color-mix(in oklab, var(--danger) 35%, var(--border));
     border-radius: var(--radius-control);
-    background: color-mix(in oklab, oklch(0.55 0.18 25) 8%, var(--surface-3));
+    background: var(--danger-soft);
     word-break: break-word;
 }

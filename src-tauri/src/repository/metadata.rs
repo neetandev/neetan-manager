@@ -149,10 +149,10 @@ mod tests {
         let mut db = Database::open_in_memory().unwrap();
         seed(&mut db, "PC-9800", "A");
         seed(&mut db, "PC-9800", "B");
-        seed(&mut db, "PC-8800", "C");
+        seed(&mut db, "PC-9800", "C");
 
         let pc98 = list(db.conn(), Some("PC-9800")).unwrap();
-        assert_eq!(pc98.len(), 2);
+        assert_eq!(pc98.len(), 3);
         assert!(pc98.iter().all(|r| r.system == "PC-9800"));
 
         let all = list(db.conn(), None).unwrap();
@@ -166,7 +166,7 @@ mod tests {
 
         let dto = GameUpsertDto {
             id: Some(id),
-            system: "PC-8800".to_string(),
+            system: "PC-9800".to_string(),
             latin_name: "New".to_string(),
             japanese_name: "新".to_string(),
             developer_name: "NewDev".to_string(),
@@ -175,7 +175,7 @@ mod tests {
         update(db.conn(), id, &dto).unwrap();
 
         let row = get(db.conn(), id).unwrap().unwrap();
-        assert_eq!(row.system, "PC-8800");
+        assert_eq!(row.system, "PC-9800");
         assert_eq!(row.latin_name, "New");
         assert_eq!(row.japanese_name, "新");
         assert_eq!(row.developer_name, "NewDev");

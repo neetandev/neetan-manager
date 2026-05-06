@@ -4,13 +4,14 @@
     "npm:@tauri-apps/api@2": "2.11.0",
     "npm:@tauri-apps/cli@2": "2.11.0",
     "npm:@tauri-apps/plugin-dialog@2": "2.7.1",
+    "npm:@types/node@^24.10.4": "24.12.2",
     "npm:@types/react-dom@^19.2.3": "19.2.3_@types+react@19.2.14",
     "npm:@types/react@^19.2.14": "19.2.14",
-    "npm:@vitejs/plugin-react@^4.7.0": "4.7.0_vite@7.3.2",
+    "npm:@vitejs/plugin-react@^4.7.0": "4.7.0_vite@7.3.2__@types+node@24.12.2_@types+node@24.12.2",
     "npm:react-dom@^19.2.5": "19.2.5_react@19.2.5",
     "npm:react@^19.2.5": "19.2.5",
     "npm:typescript@~6.0.3": "6.0.3",
-    "npm:vite@^7.3.2": "7.3.2"
+    "npm:vite@^7.3.2": "7.3.2_@types+node@24.12.2"
   },
   "npm": {
     "@babel/code-frame@7.29.0": {
@@ -548,6 +549,12 @@
     "@types/estree@1.0.8": {
       "integrity": "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w=="
     },
+    "@types/node@24.12.2": {
+      "integrity": "sha512-A1sre26ke7HDIuY/M23nd9gfB+nrmhtYyMINbjI1zHJxYteKR6qSMX56FsmjMcDb3SMcjJg5BiRRgOCC/yBD0g==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
     "@types/react-dom@19.2.3_@types+react@19.2.14": {
       "integrity": "sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==",
       "dependencies": [
@@ -560,7 +567,7 @@
         "csstype"
       ]
     },
-    "@vitejs/plugin-react@4.7.0_vite@7.3.2": {
+    "@vitejs/plugin-react@4.7.0_vite@7.3.2__@types+node@24.12.2_@types+node@24.12.2": {
       "integrity": "sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==",
       "dependencies": [
         "@babel/core",
@@ -768,6 +775,9 @@
       "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "bin": true
     },
+    "undici-types@7.16.0": {
+      "integrity": "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="
+    },
     "update-browserslist-db@1.2.3_browserslist@4.28.2": {
       "integrity": "sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==",
       "dependencies": [
@@ -777,9 +787,10 @@
       ],
       "bin": true
     },
-    "vite@7.3.2": {
+    "vite@7.3.2_@types+node@24.12.2": {
       "integrity": "sha512-Bby3NOsna2jsjfLVOHKes8sGwgl4TT0E6vvpYgnAYDIF/tie7MRaFthmKuHx1NSXjiTueXH3do80FMQgvEktRg==",
       "dependencies": [
+        "@types/node",
         "esbuild",
         "fdir",
         "picomatch",
@@ -789,6 +800,9 @@
       ],
       "optionalDependencies": [
         "fsevents"
+      ],
+      "optionalPeers": [
+        "@types/node"
       ],
       "bin": true
     },
@@ -802,6 +816,7 @@
         "npm:@tauri-apps/api@2",
         "npm:@tauri-apps/cli@2",
         "npm:@tauri-apps/plugin-dialog@2",
+        "npm:@types/node@^24.10.4",
         "npm:@types/react-dom@^19.2.3",
         "npm:@types/react@^19.2.14",
         "npm:@vitejs/plugin-react@^4.7.0",

@@ -1,6 +1,7 @@
 import { SYSTEMS } from "../../data/systems";
 import { useFilteredGames } from "../../hooks/useFilteredGames";
 import { useAppState } from "../../state/AppContext";
+import { ActionGroup } from "./ActionGroup";
 import { SearchInput } from "./SearchInput";
 import { ViewToggle } from "./ViewToggle";
 import "./Toolbar.css";
@@ -20,6 +21,7 @@ export function Toolbar() {
         </span>
       </div>
       <div className="toolbar-right">
+        <ActionGroup />
         <SearchInput />
         <ViewToggle />
       </div>

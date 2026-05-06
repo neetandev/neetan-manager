@@ -53,7 +53,7 @@ impl Config {
         self.first_setup
     }
 
-    /// Marks the first-time setup as completed. Stays completed forever after — clearing the
+    /// Marks the first-time setup as completed. Stays completed forever after - clearing the
     /// portable directory later does not flip this back.
     pub(crate) fn mark_setup_complete(&mut self) {
         self.first_setup = false;
