@@ -1,0 +1,254 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "ok": "OK",
+    "browse": "Browse…",
+    "clear": "Clear",
+    "close": "Close",
+    "loading": "Loading…",
+    "loadingLower": "loading…",
+    "notSet": "Not set",
+    "unknownError": "Unknown error",
+    "delete": "Delete",
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "create": "Create"
+  },
+  "menu": {
+    "file": "File",
+    "info": "Info",
+    "settings": "Settings…",
+    "quit": "Quit",
+    "license": "License",
+    "version": "Version"
+  },
+  "themeToggle": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "toolbar": {
+    "actionsAriaLabel": "Library actions",
+    "addTitle": "Add game",
+    "addLabel": "Add",
+    "editTitleEnabled": "Edit selected game",
+    "editTitleDisabled": "Select a game to edit",
+    "editLabel": "Edit",
+    "duplicateTitleEnabled": "Duplicate selected game",
+    "duplicateTitleDisabled": "Select a game to duplicate",
+    "duplicateLabel": "Duplicate",
+    "deleteTitleEnabled": "Delete selected game",
+    "deleteTitleDisabled": "Select a game to delete",
+    "deleteLabel": "Delete",
+    "viewToggleAriaLabel": "Switch content view",
+    "tableView": "Table view",
+    "gridView": "Grid view",
+    "searchPlaceholder": "Search titles, developers, years…",
+    "searchAriaLabel": "Search games",
+    "searchClear": "Clear search"
+  },
+  "status": {
+    "loading": "loading…",
+    "failed": "failed to load: {{error}}",
+    "summary": "{{system}} · {{shown}} of {{total}} shown",
+    "selected": "{{name}} selected"
+  },
+  "gameTable": {
+    "columnLatin": "English Name",
+    "columnJapanese": "Japanese Name",
+    "columnDeveloper": "Developer",
+    "columnYear": "Year",
+    "emptyState": "No titles match your search."
+  },
+  "gameGrid": {
+    "emptyState": "No titles match your search.",
+    "boxArtPlaceholder": "BOX ART"
+  },
+  "sidebar": {
+    "configureSystem": "Configure {{name}} defaults",
+    "editSystemConfig": "Edit system config"
+  },
+  "deleteModal": {
+    "title": "Delete game",
+    "bodyPrefix": "Remove ",
+    "bodySuffix": " from the library? The ROM file is not deleted from disk.",
+    "failed": "Failed to delete: {{error}}"
+  },
+  "settings": {
+    "title": "Settings",
+    "portableDirectory": "Portable directory",
+    "portableDirectoryHelp": "Folder containing the neetan executable, the database, and the game files.",
+    "selectPortableDirectory": "Select portable directory",
+    "neetanExecutable": "Neetan executable",
+    "neetanExecutableHelp": "Optional path to the neetan binary. If unset, the portable directory is checked first, then the system PATH.",
+    "selectNeetanExecutable": "Select neetan executable",
+    "language": "Language",
+    "languageEnglish": "English",
+    "languageJapanese": "日本語"
+  },
+  "version": {
+    "title": "About Neetan Manager",
+    "appLabel": "App",
+    "appName": "neetan-manager",
+    "versionLabel": "Version",
+    "versionValue": "0.1.0",
+    "buildLabel": "Build",
+    "buildValue": "prototype",
+    "engineLabel": "Engine",
+    "engineValue": "Tauri 2 · React 19",
+    "licenseLabel": "License",
+    "licenseValue": "MIT"
+  },
+  "license": {
+    "title": "License",
+    "copyright": "Copyright (c) 2026 neetan developer team.",
+    "rights": "All rights reserved."
+  },
+  "firstSetup": {
+    "title": "First Setup",
+    "language": "Language",
+    "portableDirectory": "Portable directory",
+    "portableDirectoryHelp": "Folder containing the neetan executable, the database, and the game files."
+  },
+  "statusBar": {
+    "version": "v0.1.0"
+  },
+  "comingSoon": "{{name}} (coming soon)",
+  "upsert": {
+    "modal": {
+      "titleAdd": "Add game",
+      "titleEdit": "Edit game",
+      "titleDuplicate": "Duplicate",
+      "sublineAdd": "new · {{system}}",
+      "sublineEdit": "id {{id}} · {{system}}",
+      "sublineDuplicate": "copy of {{id}} · {{system}}",
+      "footerHint": "Changes apply at the next launch of the title.",
+      "cancel": "Cancel",
+      "save": "Save",
+      "duplicateLatinName": "Copy of {{name}}",
+      "selectImageTitle": "Select {{bay}} image",
+      "selectFieldTitle": "Select {{field}}",
+      "clearFieldAriaLabel": "Clear {{field}}",
+      "resetFor": "{{title}} for {{field}}"
+    },
+    "sections": {
+      "metadata": "Metadata",
+      "machine": "Machine",
+      "drives": "Drives",
+      "drivesDesc": "Disk images mounted in each drive. Order is the insertion order.",
+      "boot": "Boot",
+      "display": "Display",
+      "audio": "Audio",
+      "memory": "Memory",
+      "rom": "ROM overrides",
+      "romDesc": "Optional. By default the HLE BIOS and built-in font are used.",
+      "other": "Other"
+    },
+    "defaultable": {
+      "paren": "(use system default - {{label}})",
+      "parenNoValue": "(use system default)",
+      "fontDefault": "(use system default - built-in font)",
+      "biosDefault": "(use system default - HLE BIOS)",
+      "resetTitle": "Reset to system default",
+      "resetLabel": "Reset",
+      "clearTitle": "Clear (use system default)",
+      "parenEmulator": "(emulator default - {{label}})",
+      "parenNoValueEmulator": "(emulator default)",
+      "fontDefaultEmulator": "(emulator default - built-in font)",
+      "biosDefaultEmulator": "(emulator default - HLE BIOS)",
+      "resetTitleEmulator": "Reset to emulator default",
+      "clearTitleEmulator": "Clear (emulator default)"
+    },
+    "systemModal": {
+      "title": "{{system}} defaults",
+      "subline": "Used as fallback for every game of this system.",
+      "footerHint": "Saved values become the Default for every game of this system."
+    },
+    "tri": {
+      "default": "Default",
+      "on": "On",
+      "off": "Off"
+    },
+    "fields": {
+      "system": "System",
+      "latin_name": "Latin name",
+      "japanese_name": "Japanese name",
+      "developer": "Developer",
+      "year": "Release year",
+      "machine": "Model",
+      "cpu-mode": "CPU mode",
+      "cpu-mode-help": "PC-9801 only - ignored on PC-9821.",
+      "force-gdc-clock": "Force GDC clock",
+      "boot-device": "Boot device",
+      "boot-device-help": "‘os’ boots without media.",
+      "aspect-mode": "Aspect mode",
+      "crt": "CRT effect",
+      "window-mode": "Window mode",
+      "audio-volume": "Master volume",
+      "soundboard": "Sound board",
+      "adpcm-ram": "ADPCM RAM",
+      "midi": "MIDI device",
+      "mt32-roms": "MT-32 ROMs",
+      "sc55-roms": "SC-55 ROMs",
+      "ems": "EMS",
+      "xms": "XMS",
+      "bios-rom": "BIOS ROM",
+      "bios-rom-help": "Empty inherits from the system. HLE BIOS is the built-in fallback.",
+      "bios-rom-help-emulator": "Empty uses the built-in HLE BIOS.",
+      "font-rom": "Font ROM",
+      "font-rom-help": "Empty inherits from the system. Built-in font is the fallback.",
+      "font-rom-help-emulator": "Empty uses the built-in font.",
+      "printer": "Printer output",
+      "printer-help": "Empty inherits from the system. The file must already exist if set.",
+      "printer-help-emulator": "Empty disables printer output. The file must already exist if set."
+    },
+    "drives": {
+      "listMeta_one": "1 image · drag to reorder",
+      "listMeta_other": "{{count}} images · drag to reorder",
+      "addExisting": "+ Add existing image…",
+      "createNew": "Create new image…",
+      "replace": "Replace…",
+      "clear": "Clear",
+      "fileNotFound": "file not found",
+      "empty": "No image attached. Choose an existing file or create a new one.",
+      "cdromBanner": "Selected machine is {{machineId}}. CD-ROM entries are stored but ignored until a PC-9821 model is selected.",
+      "bays": {
+        "fdd1": "FDD1",
+        "fdd2": "FDD2",
+        "hdd1": "HDD1",
+        "hdd2": "HDD2",
+        "cdrom": "CD-ROM"
+      },
+      "removeImageAriaLabel": "Remove {{path}}"
+    },
+    "validation": {
+      "latinNameRequired": "Latin name is required.",
+      "yearRequired": "Year is required.",
+      "yearOutOfRange": "Year must be between 1979 and 2099."
+    },
+    "errors": {
+      "saveFailed": "Failed to save: {{error}}",
+      "loadConfigFailed": "Failed to load config: {{error}}"
+    },
+    "createImage": {
+      "title": "Create new disk image",
+      "tabFdd": "Floppy (FDD)",
+      "tabHdd": "Hard disk (HDD)",
+      "output": "Output filename",
+      "diskType": "Disk type",
+      "create": "Create",
+      "cancel": "Cancel",
+      "browse": "Browse…",
+      "sasiGroup": "SASI",
+      "ideGroup": "IDE",
+      "saveDialogTitle": "Save disk image",
+      "defaultFilenameFdd": "new-image.d88",
+      "defaultFilenameHdd": "new-image.hdi",
+      "filterFdd": "Floppy disk",
+      "filterHdd": "Hard disk image",
+      "filterCue": "CUE sheet",
+      "filenameRequired": "Output filename is required.",
+      "createFailed": "Failed to create image: {{error}}"
+    }
+  }
+}

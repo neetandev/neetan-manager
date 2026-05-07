@@ -1,16 +1,17 @@
-# Tauri + React + Typescript
+# Neetan (ねーたん) manager
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+A configuration manager to help create / manage configuration for the PC-98 emulator Neetan.
 
-## Recommended IDE Setup
+## Development
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-
-
-## Install dependencies
+### Install dependencies
 
 `deno install`
 
-## Run application
+### Run application
 
 `deno task tauri dev`
+
+## License
+
+This project is licensed under the [3-clause BSD](https://opensource.org/license/bsd-3-clause) license.

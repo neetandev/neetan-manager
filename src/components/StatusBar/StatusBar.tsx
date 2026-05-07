@@ -1,25 +1,40 @@
-import { GAMES } from "../../data/games";
-import { SYSTEMS } from "../../data/systems";
-import { useFilteredGames } from "../../hooks/useFilteredGames";
-import { useAppState } from "../../state/AppContext";
+import {useTranslation} from "react-i18next";
+import {SYSTEMS} from "../../data/systems";
+import {useFilteredGames} from "../../hooks/useFilteredGames";
+import {useAppState} from "../../state/AppContext";
 import "./StatusBar.css";
 
-const VERSION = "v0.1.0";
-
 export function StatusBar() {
-  const { system, selected } = useAppState();
-  const { rows, totalForSystem } = useFilteredGames();
+    const {t} = useTranslation();
+    const {system, selected, games} = useAppState();
+    const {rows, totalForSystem} = useFilteredGames();
 
-  const selectedGame = selected != null ? GAMES.find((g) => g.id === selected) : undefined;
-  const systemName = SYSTEMS.find((s) => s.id === system)?.name ?? system;
-  const summary = `${systemName} · ${rows.length} of ${totalForSystem} shown`;
-  const trailer = selectedGame ? ` · ${selectedGame.latin_name} selected` : "";
+    const selectedGame =
+        selected != null ? games.rows.find((g) => g.id === selected) : undefined;
+    const systemName = SYSTEMS.find((s) => s.id === system)?.name ?? system;
 
-  return (
-    <footer className="status-bar">
-      <div className="status-left" />
-      <div className="status-center">{summary}{trailer}</div>
-      <div className="status-right">{VERSION}</div>
-    </footer>
-  );
+    let center: string;
+    if (games.status === "loading" && games.rows.length === 0) {
+        center = `${systemName} · ${t("status.loading")}`;
+    } else if (games.status === "error") {
+        center = `${systemName} · ${t("status.failed", {error: games.error ?? t("common.unknownError")})}`;
+    } else {
+        const summary = t("status.summary", {
+            system: systemName,
+            shown: rows.length,
+            total: totalForSystem,
+        });
+        const trailer = selectedGame
+            ? ` · ${t("status.selected", {name: selectedGame.latin_name})}`
+            : "";
+        center = `${summary}${trailer}`;
+    }
+
+    return (
+        <footer className="status-bar">
+            <div className="status-left"/>
+            <div className="status-center">{center}</div>
+            <div className="status-right">{t("statusBar.version")}</div>
+        </footer>
+    );
 }

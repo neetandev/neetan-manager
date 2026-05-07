@@ -1,17 +1,18 @@
-import { InfoIcon } from "../../../../icons/Icons";
-import { STRINGS } from "../strings";
+import {WarningTriangleIcon} from "../../../../icons/Icons";
+import {useStrings} from "../strings";
 
 interface Props {
-  machineId: string;
+    machineId: string;
 }
 
-export function CdromBanner({ machineId }: Props) {
-  return (
-    <div className="drive-banner" role="note">
+export function CdromBanner({machineId}: Props) {
+    const STRINGS = useStrings();
+    return (
+        <div className="drive-banner" role="note">
       <span className="drive-banner-icon">
-        <InfoIcon size={12} />
+        <WarningTriangleIcon size={14}/>
       </span>
-      <span>{STRINGS.drives.cdromBanner(machineId)}</span>
-    </div>
-  );
+            <span>{STRINGS.drives.cdromBanner(machineId)}</span>
+        </div>
+    );
 }

@@ -22,6 +22,42 @@
     gap: 4px;
 }
 
+.system-card-wrap {
+    position: relative;
+}
+
+/* Cog sits over the bottom-right of the system tile (the "system icon").
+   Tile is 56×42 at 8px padding from the wrap, so its bottom-right is (64,50). */
+.system-card-cog {
+    position: absolute;
+    top: 36px;
+    left: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--ink-3);
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    transition: background-color 100ms ease, color 100ms ease, transform 100ms ease;
+}
+
+.system-card-cog:hover {
+    background: var(--surface-hover);
+    color: var(--ink);
+    transform: scale(1.08);
+}
+
+.system-card-cog:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 1px;
+}
+
 .system-card {
     position: relative;
     display: grid;

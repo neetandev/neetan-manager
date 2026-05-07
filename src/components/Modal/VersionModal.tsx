@@ -1,25 +1,27 @@
-import { Modal } from "./Modal";
+import {useTranslation} from "react-i18next";
+import {Modal} from "./Modal";
 
 interface Props {
-  open: boolean;
-  onClose: () => void;
+    open: boolean;
+    onClose: () => void;
 }
 
-export function VersionModal({ open, onClose }: Props) {
-  return (
-    <Modal title="About Neetan Manager" open={open} onClose={onClose}>
-      <dl className="kv">
-        <dt>App</dt>
-        <dd>neetan-manager</dd>
-        <dt>Version</dt>
-        <dd>0.1.0</dd>
-        <dt>Build</dt>
-        <dd>prototype</dd>
-        <dt>Engine</dt>
-        <dd>Tauri 2 · React 19</dd>
-        <dt>License</dt>
-        <dd>MIT</dd>
-      </dl>
-    </Modal>
-  );
+export function VersionModal({open, onClose}: Props) {
+    const {t} = useTranslation();
+    return (
+        <Modal title={t("version.title")} open={open} onClose={onClose}>
+            <dl className="kv">
+                <dt>{t("version.appLabel")}</dt>
+                <dd>{t("version.appName")}</dd>
+                <dt>{t("version.versionLabel")}</dt>
+                <dd>{t("version.versionValue")}</dd>
+                <dt>{t("version.buildLabel")}</dt>
+                <dd>{t("version.buildValue")}</dd>
+                <dt>{t("version.engineLabel")}</dt>
+                <dd>{t("version.engineValue")}</dd>
+                <dt>{t("version.licenseLabel")}</dt>
+                <dd>{t("version.licenseValue")}</dd>
+            </dl>
+        </Modal>
+    );
 }

@@ -32,6 +32,10 @@ pub fn run() {
             commands::get_portable_directory,
             commands::set_portable_directory,
             commands::default_portable_directory,
+            commands::get_neetan_executable,
+            commands::set_neetan_executable,
+            commands::get_locale,
+            commands::set_locale,
             commands::complete_first_setup,
             commands::quit_app,
             commands::list_games,
@@ -43,6 +47,7 @@ pub fn run() {
             commands::get_system_config,
             commands::set_system_config,
             commands::launch_game,
+            commands::create_disk_image,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

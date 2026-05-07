@@ -1,0 +1,254 @@
+{
+  "common": {
+    "cancel": "キャンセル",
+    "save": "保存",
+    "ok": "OK",
+    "browse": "参照…",
+    "clear": "クリア",
+    "close": "閉じる",
+    "loading": "読み込み中…",
+    "loadingLower": "読み込み中…",
+    "notSet": "未設定",
+    "unknownError": "不明なエラー",
+    "delete": "削除",
+    "edit": "編集",
+    "duplicate": "複製",
+    "create": "作成"
+  },
+  "menu": {
+    "file": "ファイル",
+    "info": "情報",
+    "settings": "設定…",
+    "quit": "終了",
+    "license": "ライセンス",
+    "version": "バージョン"
+  },
+  "themeToggle": {
+    "switchToLight": "ライトテーマに切り替え",
+    "switchToDark": "ダークテーマに切り替え"
+  },
+  "toolbar": {
+    "actionsAriaLabel": "ライブラリ操作",
+    "addTitle": "ゲームを追加",
+    "addLabel": "追加",
+    "editTitleEnabled": "選択したゲームを編集",
+    "editTitleDisabled": "編集するゲームを選択してください",
+    "editLabel": "編集",
+    "duplicateTitleEnabled": "選択したゲームを複製",
+    "duplicateTitleDisabled": "複製するゲームを選択してください",
+    "duplicateLabel": "複製",
+    "deleteTitleEnabled": "選択したゲームを削除",
+    "deleteTitleDisabled": "削除するゲームを選択してください",
+    "deleteLabel": "削除",
+    "viewToggleAriaLabel": "表示切り替え",
+    "tableView": "テーブル表示",
+    "gridView": "グリッド表示",
+    "searchPlaceholder": "タイトル、開発元、年で検索…",
+    "searchAriaLabel": "ゲームを検索",
+    "searchClear": "検索をクリア"
+  },
+  "status": {
+    "loading": "読み込み中…",
+    "failed": "読み込みに失敗しました: {{error}}",
+    "summary": "{{system}} · {{total}}件中 {{shown}}件表示",
+    "selected": "{{name}} を選択中"
+  },
+  "gameTable": {
+    "columnLatin": "英語名",
+    "columnJapanese": "日本語名",
+    "columnDeveloper": "開発元",
+    "columnYear": "年",
+    "emptyState": "該当するタイトルはありません。"
+  },
+  "gameGrid": {
+    "emptyState": "該当するタイトルはありません。",
+    "boxArtPlaceholder": "BOX ART"
+  },
+  "sidebar": {
+    "configureSystem": "{{name}} のデフォルトを設定",
+    "editSystemConfig": "システム設定を編集"
+  },
+  "deleteModal": {
+    "title": "ゲームを削除",
+    "bodyPrefix": "",
+    "bodySuffix": " をライブラリから削除しますか? ROM ファイルはディスクから削除されません。",
+    "failed": "削除に失敗しました: {{error}}"
+  },
+  "settings": {
+    "title": "設定",
+    "portableDirectory": "ポータブルディレクトリ",
+    "portableDirectoryHelp": "neetan の実行ファイル、データベース、ゲームファイルが含まれるフォルダ。",
+    "selectPortableDirectory": "ポータブルディレクトリを選択",
+    "neetanExecutable": "Neetan 実行ファイル",
+    "neetanExecutableHelp": "neetan バイナリへの任意のパス。未設定の場合、まずポータブルディレクトリ、次にシステムの PATH が確認されます。",
+    "selectNeetanExecutable": "Neetan 実行ファイルを選択",
+    "language": "言語",
+    "languageEnglish": "English",
+    "languageJapanese": "日本語"
+  },
+  "version": {
+    "title": "Neetan Manager について",
+    "appLabel": "アプリ",
+    "appName": "neetan-manager",
+    "versionLabel": "バージョン",
+    "versionValue": "0.1.0",
+    "buildLabel": "ビルド",
+    "buildValue": "プロトタイプ",
+    "engineLabel": "エンジン",
+    "engineValue": "Tauri 2 · React 19",
+    "licenseLabel": "ライセンス",
+    "licenseValue": "MIT"
+  },
+  "license": {
+    "title": "ライセンス",
+    "copyright": "Copyright (c) 2026 neetan developer team.",
+    "rights": "All rights reserved."
+  },
+  "firstSetup": {
+    "title": "初期設定",
+    "language": "言語",
+    "portableDirectory": "ポータブルディレクトリ",
+    "portableDirectoryHelp": "neetan の実行ファイル、データベース、ゲームファイルが含まれるフォルダ。"
+  },
+  "statusBar": {
+    "version": "v0.1.0"
+  },
+  "comingSoon": "{{name}} (近日対応)",
+  "upsert": {
+    "modal": {
+      "titleAdd": "ゲームを追加",
+      "titleEdit": "ゲームを編集",
+      "titleDuplicate": "複製",
+      "sublineAdd": "新規 · {{system}}",
+      "sublineEdit": "id {{id}} · {{system}}",
+      "sublineDuplicate": "{{id}} の複製 · {{system}}",
+      "footerHint": "変更は次回のタイトル起動時に反映されます。",
+      "cancel": "キャンセル",
+      "save": "保存",
+      "duplicateLatinName": "Copy of {{name}}",
+      "selectImageTitle": "{{bay}} のイメージを選択",
+      "selectFieldTitle": "{{field}} を選択",
+      "clearFieldAriaLabel": "{{field}} をクリア",
+      "resetFor": "{{field}} の{{title}}"
+    },
+    "sections": {
+      "metadata": "メタデータ",
+      "machine": "機種",
+      "drives": "ドライブ",
+      "drivesDesc": "各ドライブにマウントされるディスクイメージ。順序は挿入順です。",
+      "boot": "起動",
+      "display": "ディスプレイ",
+      "audio": "オーディオ",
+      "memory": "メモリ",
+      "rom": "ROM 上書き",
+      "romDesc": "オプション。デフォルトでは HLE BIOS と内蔵フォントが使用されます。",
+      "other": "その他"
+    },
+    "defaultable": {
+      "paren": "(システムデフォルトを使用 - {{label}})",
+      "parenNoValue": "(システムデフォルトを使用)",
+      "fontDefault": "(システムデフォルトを使用 - 内蔵フォント)",
+      "biosDefault": "(システムデフォルトを使用 - HLE BIOS)",
+      "resetTitle": "システムデフォルトにリセット",
+      "resetLabel": "リセット",
+      "clearTitle": "クリア (システムデフォルトを使用)",
+      "parenEmulator": "(エミュレータデフォルト - {{label}})",
+      "parenNoValueEmulator": "(エミュレータデフォルト)",
+      "fontDefaultEmulator": "(エミュレータデフォルト - 内蔵フォント)",
+      "biosDefaultEmulator": "(エミュレータデフォルト - HLE BIOS)",
+      "resetTitleEmulator": "エミュレータデフォルトにリセット",
+      "clearTitleEmulator": "クリア (エミュレータデフォルト)"
+    },
+    "systemModal": {
+      "title": "{{system}} のデフォルト",
+      "subline": "このシステムのすべてのゲームのフォールバックとして使用されます。",
+      "footerHint": "保存した値はこのシステムのすべてのゲームのデフォルトになります。"
+    },
+    "tri": {
+      "default": "デフォルト",
+      "on": "オン",
+      "off": "オフ"
+    },
+    "fields": {
+      "system": "システム",
+      "latin_name": "英語名",
+      "japanese_name": "日本語名",
+      "developer": "開発元",
+      "year": "発売年",
+      "machine": "モデル",
+      "cpu-mode": "CPU モード",
+      "cpu-mode-help": "PC-9801 専用 - PC-9821 では無視されます。",
+      "force-gdc-clock": "GDC クロックを強制",
+      "boot-device": "起動デバイス",
+      "boot-device-help": "「os」はメディアなしで起動します。",
+      "aspect-mode": "アスペクトモード",
+      "crt": "CRT エフェクト",
+      "window-mode": "ウィンドウモード",
+      "audio-volume": "マスター音量",
+      "soundboard": "サウンドボード",
+      "adpcm-ram": "ADPCM RAM",
+      "midi": "MIDI デバイス",
+      "mt32-roms": "MT-32 ROM",
+      "sc55-roms": "SC-55 ROM",
+      "ems": "EMS",
+      "xms": "XMS",
+      "bios-rom": "BIOS ROM",
+      "bios-rom-help": "空白の場合、システムから継承します。HLE BIOS が組み込みのフォールバックです。",
+      "bios-rom-help-emulator": "空白の場合、組み込みの HLE BIOS が使用されます。",
+      "font-rom": "フォント ROM",
+      "font-rom-help": "空白の場合、システムから継承します。内蔵フォントがフォールバックです。",
+      "font-rom-help-emulator": "空白の場合、内蔵フォントが使用されます。",
+      "printer": "プリンタ出力",
+      "printer-help": "空白の場合、システムから継承します。設定する場合、ファイルが既に存在する必要があります。",
+      "printer-help-emulator": "空白の場合、プリンタ出力は無効です。設定する場合、ファイルが既に存在する必要があります。"
+    },
+    "drives": {
+      "listMeta_one": "{{count}} 件のイメージ · ドラッグで並べ替え",
+      "listMeta_other": "{{count}} 件のイメージ · ドラッグで並べ替え",
+      "addExisting": "+ 既存のイメージを追加…",
+      "createNew": "新しいイメージを作成…",
+      "replace": "置き換え…",
+      "clear": "クリア",
+      "fileNotFound": "ファイルが見つかりません",
+      "empty": "イメージが添付されていません。既存のファイルを選択するか、新規に作成してください。",
+      "cdromBanner": "選択した機種は {{machineId}} です。CD-ROM のエントリは保存されますが、PC-9821 モデルが選択されるまで無視されます。",
+      "bays": {
+        "fdd1": "FDD1",
+        "fdd2": "FDD2",
+        "hdd1": "HDD1",
+        "hdd2": "HDD2",
+        "cdrom": "CD-ROM"
+      },
+      "removeImageAriaLabel": "{{path}} を削除"
+    },
+    "validation": {
+      "latinNameRequired": "英語名は必須です。",
+      "yearRequired": "年は必須です。",
+      "yearOutOfRange": "年は 1979 から 2099 の間で指定してください。"
+    },
+    "errors": {
+      "saveFailed": "保存に失敗しました: {{error}}",
+      "loadConfigFailed": "設定の読み込みに失敗しました: {{error}}"
+    },
+    "createImage": {
+      "title": "新しいディスクイメージを作成",
+      "tabFdd": "フロッピー (FDD)",
+      "tabHdd": "ハードディスク (HDD)",
+      "output": "出力ファイル名",
+      "diskType": "ディスクタイプ",
+      "create": "作成",
+      "cancel": "キャンセル",
+      "browse": "参照…",
+      "sasiGroup": "SASI",
+      "ideGroup": "IDE",
+      "saveDialogTitle": "ディスクイメージを保存",
+      "defaultFilenameFdd": "new-image.d88",
+      "defaultFilenameHdd": "new-image.hdi",
+      "filterFdd": "フロッピーディスク",
+      "filterHdd": "ハードディスクイメージ",
+      "filterCue": "CUE シート",
+      "filenameRequired": "出力ファイル名は必須です。",
+      "createFailed": "イメージの作成に失敗しました: {{error}}"
+    }
+  }
+}

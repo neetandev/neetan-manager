@@ -157,6 +157,9 @@
     height: 26px;
     padding: 0 10px;
     font-size: 11.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .icon-btn {
@@ -528,23 +531,16 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 14px;
-    background: var(--surface-3);
-    border: 1px solid var(--border);
-    border-bottom: none;
-    border-top-left-radius: var(--radius-card);
-    border-top-right-radius: var(--radius-card);
+    padding: 10px 14px;
+    background: var(--warn-soft);
+    border: 1px solid color-mix(in oklab, var(--warn) 35%, transparent);
+    border-radius: var(--radius-card);
     font-size: 11.5px;
-    color: var(--ink-2);
-}
-
-.drive-block.has-banner {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    color: var(--ink);
 }
 
 .drive-banner-icon {
-    color: var(--ink-3);
+    color: var(--warn);
     flex-shrink: 0;
 }
 

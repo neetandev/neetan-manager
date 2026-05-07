@@ -218,6 +218,10 @@
     gap: 10px;
 }
 
+.setting-row + .setting-row {
+    margin-top: 14px;
+}
+
 .setting-row-head {
     display: flex;
     flex-direction: column;
