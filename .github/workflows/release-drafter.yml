@@ -1,0 +1,23 @@
+name: Release Drafter
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [ opened, reopened, synchronize ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-release-draft:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: release-drafter/release-drafter@v7
+  autolabel:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: release-drafter/release-drafter/autolabeler@v7
