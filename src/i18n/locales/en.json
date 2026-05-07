@@ -91,13 +91,8 @@
     "appLabel": "App",
     "appName": "neetan-manager",
     "versionLabel": "Version",
-    "versionValue": "0.1.0",
-    "buildLabel": "Build",
-    "buildValue": "prototype",
-    "engineLabel": "Engine",
-    "engineValue": "Tauri 2 · React 19",
     "licenseLabel": "License",
-    "licenseValue": "MIT"
+    "licenseValue": "BSD-3-Clause"
   },
   "license": {
     "title": "License",
@@ -109,9 +104,6 @@
     "language": "Language",
     "portableDirectory": "Portable directory",
     "portableDirectoryHelp": "Folder containing the neetan executable, the database, and the game files."
-  },
-  "statusBar": {
-    "version": "v0.1.0"
   },
   "comingSoon": "{{name}} (coming soon)",
   "upsert": {

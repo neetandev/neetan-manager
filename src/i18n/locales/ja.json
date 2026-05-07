@@ -91,13 +91,8 @@
     "appLabel": "アプリ",
     "appName": "neetan-manager",
     "versionLabel": "バージョン",
-    "versionValue": "0.1.0",
-    "buildLabel": "ビルド",
-    "buildValue": "プロトタイプ",
-    "engineLabel": "エンジン",
-    "engineValue": "Tauri 2 · React 19",
     "licenseLabel": "ライセンス",
-    "licenseValue": "MIT"
+    "licenseValue": "BSD-3-Clause"
   },
   "license": {
     "title": "ライセンス",
@@ -109,9 +104,6 @@
     "language": "言語",
     "portableDirectory": "ポータブルディレクトリ",
     "portableDirectoryHelp": "neetan の実行ファイル、データベース、ゲームファイルが含まれるフォルダ。"
-  },
-  "statusBar": {
-    "version": "v0.1.0"
   },
   "comingSoon": "{{name}} (近日対応)",
   "upsert": {

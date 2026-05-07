@@ -1,9 +1,14 @@
 // Path helpers.
 
+type UADataNavigator = Navigator & {
+    userAgentData?: {platform?: string};
+};
+
 export function isCaseInsensitiveFs(): boolean {
     if (typeof navigator === "undefined") return false;
-    const platform = navigator.userAgentData?.platform ?? navigator.platform ?? "";
-    const ua = navigator.userAgent ?? "";
+    const nav = navigator as UADataNavigator;
+    const platform = nav.userAgentData?.platform ?? nav.platform ?? "";
+    const ua = nav.userAgent ?? "";
     return /Win|Mac/i.test(platform) || /Windows|Macintosh|Mac OS/i.test(ua);
 }
 

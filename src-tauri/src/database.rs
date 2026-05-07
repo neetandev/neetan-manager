@@ -59,12 +59,10 @@ mod tests {
         let mut stmt = conn
             .prepare("SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name")
             .unwrap();
-        let rows = stmt
-            .query_map([], |r| r.get::<_, String>(0))
+        stmt.query_map([], |r| r.get::<_, String>(0))
             .unwrap()
             .map(Result::unwrap)
-            .collect();
-        rows
+            .collect()
     }
 
     #[test]

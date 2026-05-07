@@ -1,8 +1,8 @@
 [package]
 name = "neetan-manager"
-version = "2026.5.0"
+version = "1.0.0"
 description = "A configuration manager for Neetan"
-authors = ["Nils Hasenbanck"]
+authors = ["Nils Hasenbanck <nils@hasenbanck.de>"]
 edition = "2024"
 
 [lib]

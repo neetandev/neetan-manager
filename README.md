@@ -1,6 +1,12 @@
 # Neetan (ねーたん) manager
 
-A configuration manager to help create / manage configuration for the PC-98 emulator Neetan.
+A GUI application to manage configurations for the emulator Neetan.
+
+## Screenshots
+
+![Main window](assets/main.png)
+
+![Edit window](assets/edit.png)
 
 ## Development
 

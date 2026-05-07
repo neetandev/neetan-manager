@@ -222,4 +222,3 @@ export const MACHINE_OPTIONS = [
     },
 ] as const;
 
-export const PC9821_MODELS = ["PC9821AS", "PC9821AP"] as const;

@@ -1,5 +1,6 @@
 import {useTranslation} from "react-i18next";
 import {SYSTEMS} from "../../data/systems";
+import {useAppVersion} from "../../hooks/useAppVersion";
 import {useFilteredGames} from "../../hooks/useFilteredGames";
 import {useAppState} from "../../state/AppContext";
 import "./StatusBar.css";
@@ -8,6 +9,7 @@ export function StatusBar() {
     const {t} = useTranslation();
     const {system, selected, games} = useAppState();
     const {rows, totalForSystem} = useFilteredGames();
+    const version = useAppVersion();
 
     const selectedGame =
         selected != null ? games.rows.find((g) => g.id === selected) : undefined;
@@ -34,7 +36,7 @@ export function StatusBar() {
         <footer className="status-bar">
             <div className="status-left"/>
             <div className="status-center">{center}</div>
-            <div className="status-right">{t("statusBar.version")}</div>
+            <div className="status-right">{`v${version ?? "…"}`}</div>
         </footer>
     );
 }

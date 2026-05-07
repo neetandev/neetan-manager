@@ -58,23 +58,39 @@ jobs:
       - name: Install JS dependencies
         run: deno install
 
+      - name: Configure code-signing env (when secrets are set)
+        shell: bash
+        env:
+          TAURI_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_KEY_PW: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          APPLE_CERT: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERT_PW: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          APPLE_ID_VAR: ${{ secrets.APPLE_ID }}
+          APPLE_PW: ${{ secrets.APPLE_PASSWORD }}
+          APPLE_TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          WIN_CERT: ${{ secrets.WINDOWS_CERTIFICATE }}
+          WIN_CERT_PW: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+        run: |
+          if [ -n "$TAURI_KEY" ]; then
+            echo "TAURI_SIGNING_PRIVATE_KEY=$TAURI_KEY" >> "$GITHUB_ENV"
+            echo "TAURI_SIGNING_PRIVATE_KEY_PASSWORD=$TAURI_KEY_PW" >> "$GITHUB_ENV"
+          fi
+          if [ "$RUNNER_OS" = "macOS" ] && [ -n "$APPLE_CERT" ]; then
+            echo "APPLE_CERTIFICATE=$APPLE_CERT" >> "$GITHUB_ENV"
+            echo "APPLE_CERTIFICATE_PASSWORD=$APPLE_CERT_PW" >> "$GITHUB_ENV"
+            echo "APPLE_SIGNING_IDENTITY=$APPLE_IDENTITY" >> "$GITHUB_ENV"
+            echo "APPLE_ID=$APPLE_ID_VAR" >> "$GITHUB_ENV"
+            echo "APPLE_PASSWORD=$APPLE_PW" >> "$GITHUB_ENV"
+            echo "APPLE_TEAM_ID=$APPLE_TEAM" >> "$GITHUB_ENV"
+          fi
+          if [ "$RUNNER_OS" = "Windows" ] && [ -n "$WIN_CERT" ]; then
+            echo "WINDOWS_CERTIFICATE=$WIN_CERT" >> "$GITHUB_ENV"
+            echo "WINDOWS_CERTIFICATE_PASSWORD=$WIN_CERT_PW" >> "$GITHUB_ENV"
+          fi
+
       - name: Build bundles
         uses: tauri-apps/tauri-action@v0
-        env:
-          # Code-signing secrets - wired now, no-op when secrets are unset.
-          # Tauri updater signing
-          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
-          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
-          # Apple
-          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
-          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
-          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
-          APPLE_ID: ${{ secrets.APPLE_ID }}
-          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
-          # Windows
-          WINDOWS_CERTIFICATE: ${{ secrets.WINDOWS_CERTIFICATE }}
-          WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
         with:
           tauriScript: deno task tauri
           args: ${{ matrix.args }}
@@ -133,8 +149,17 @@ jobs:
             echo "Created new release (id=${RELEASE_ID})"
           fi
 
-          # Upload all artifacts to the release.
-          for FILE in artifacts/*; do
+          # Upload all bundle files. The downloaded artifacts preserve the
+          # `src-tauri/target/.../bundle/<format>/` directory structure, so we
+          # walk the tree and pick out the installer files by extension.
+          find artifacts -type f \( \
+            -iname '*.dmg' -o \
+            -iname '*.msi' -o \
+            -iname '*.exe' -o \
+            -iname '*.deb' -o \
+            -iname '*.rpm' -o \
+            -iname '*.AppImage' \
+            \) -print0 | while IFS= read -r -d '' FILE; do
             echo "Uploading ${FILE}..."
             gh release upload "${TAG}" "${FILE}" --clobber
           done

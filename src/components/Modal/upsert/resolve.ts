@@ -1,5 +1,6 @@
-import {PC9821_MODELS} from "./strings";
 import type {GameUpsertForm, SystemDefaults} from "./types";
+
+export const PC9821_MODELS = ["PC9821AS", "PC9821AP"] as const;
 
 type DefaultableKey = keyof SystemDefaults;
 
