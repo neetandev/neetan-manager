@@ -124,7 +124,6 @@ export function ConfigFormBody({
                         fieldName={STRINGS.fields["force-gdc-clock"].name}
                         onChange={(v) => set({"force-gdc-clock": v})}
                         options={[
-                            {value: "auto", label: "auto"},
                             {value: "2.5", label: "2.5 MHz"},
                             {value: "5", label: "5 MHz"},
                         ]}
@@ -213,7 +212,7 @@ export function ConfigFormBody({
                             {value: "fdd2", label: "fdd2"},
                             {value: "hdd1", label: "hdd1"},
                             {value: "hdd2", label: "hdd2"},
-                            {value: "os", label: "os"},
+                            {value: "dos", label: "dos"},
                         ]}
                         maxWidth={220}
                         defaultLabelMode={defaultLabelMode}
@@ -258,6 +257,27 @@ export function ConfigFormBody({
                         ariaLabel={STRINGS.fields.crt.name}
                         labelledBy="up-crt-label"
                         onChange={(v) => set({crt: v})}
+                    />
+                </div>
+
+                <FieldLabel
+                    name={STRINGS.fields.graphicboard.name}
+                    keyName={STRINGS.fields.graphicboard.key}
+                    htmlFor="up-graphicboard"
+                />
+                <div className="form-cell">
+                    <DefaultableSelect
+                        id="up-graphicboard"
+                        value={form.graphicboard}
+                        defaultLabel={defaults.graphicboard}
+                        fieldName={STRINGS.fields.graphicboard.name}
+                        onChange={(v) => set({graphicboard: v})}
+                        options={[
+                            {value: "none", label: "none"},
+                            {value: "ga1280a", label: "ga1280a"},
+                        ]}
+                        maxWidth={220}
+                        defaultLabelMode={defaultLabelMode}
                     />
                 </div>
 
@@ -494,6 +514,23 @@ export function ConfigFormBody({
                         defaultLabelMode={defaultLabelMode}
                     />
                     <div className="field-help">{printerHelp}</div>
+                </div>
+
+                <FieldLabel
+                    name={STRINGS.fields["enable-extractor"].name}
+                    keyName={STRINGS.fields["enable-extractor"].key}
+                    id="up-enable-extractor-label"
+                />
+                <div className="form-cell">
+                    <TriState
+                        value={form["enable-extractor"]}
+                        ariaLabel={STRINGS.fields["enable-extractor"].name}
+                        labelledBy="up-enable-extractor-label"
+                        onChange={(v) => set({"enable-extractor": v})}
+                    />
+                    <div className="field-help">
+                        {STRINGS.fields["enable-extractor"].help}
+                    </div>
                 </div>
             </Section>
         </>

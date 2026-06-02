@@ -1,5 +1,6 @@
 import type {Dispatch} from "react";
 import type {TFunction} from "i18next";
+import {launchGameAction} from "../../hooks/useGameLibrary";
 import type {Action} from "../../state/types";
 import type {ContextMenuItem} from "./ContextMenu";
 
@@ -7,9 +8,17 @@ export function buildGameContextMenuItems(
     t: TFunction,
     dispatch: Dispatch<Action>,
     gameId: number,
+    gameName: string,
     closeMenu: () => void,
 ): ContextMenuItem[] {
     return [
+        {
+            label: t("common.run"),
+            onSelect: () => {
+                void launchGameAction(dispatch, gameId, gameName);
+                closeMenu();
+            },
+        },
         {
             label: t("common.edit"),
             onSelect: () => {

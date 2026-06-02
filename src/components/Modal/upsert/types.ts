@@ -38,6 +38,7 @@ export interface GameUpsertForm {
     "boot-device": DefaultableString;
     "aspect-mode": DefaultableString;
     crt: Tri;
+    graphicboard: DefaultableString;
     "window-mode": DefaultableString;
     "audio-volume": number | null;
     soundboard: DefaultableString;
@@ -51,6 +52,7 @@ export interface GameUpsertForm {
     "bios-rom": DefaultablePath;
     "font-rom": DefaultablePath;
     printer: DefaultablePath;
+    "enable-extractor": Tri;
 
     fdd1: DriveImage[];
     fdd2: DriveImage[];
@@ -68,6 +70,7 @@ export interface SystemDefaults {
     "boot-device": string;
     "aspect-mode": string;
     crt: boolean;
+    graphicboard: string;
     "window-mode": string;
     "audio-volume": number;
     soundboard: string;
@@ -80,4 +83,5 @@ export interface SystemDefaults {
     "bios-rom": string;
     "font-rom": string;
     printer: string;
+    "enable-extractor": boolean;
 }

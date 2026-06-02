@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {useFilteredGames} from "../../hooks/useFilteredGames";
+import {launchGameAction} from "../../hooks/useGameLibrary";
 import {useAppDispatch, useAppState} from "../../state/AppContext";
 import {ContextMenu} from "../ContextMenu/ContextMenu";
 import {buildGameContextMenuItems} from "../ContextMenu/gameMenuItems";
@@ -15,6 +16,7 @@ export function GameGrid() {
         x: number;
         y: number;
         gameId: number;
+        gameName: string;
     } | null>(null);
     const closeMenu = () => setMenu(null);
 
@@ -32,9 +34,17 @@ export function GameGrid() {
                     key={g.id}
                     className={`tile${selected === g.id ? " is-selected" : ""}`}
                     onClick={() => dispatch({type: "SET_SELECTED", id: g.id})}
+                    onDoubleClick={() =>
+                        void launchGameAction(dispatch, g.id, g.latin_name)
+                    }
                     onContextMenu={(e) => {
                         e.preventDefault();
-                        setMenu({x: e.clientX, y: e.clientY, gameId: g.id});
+                        setMenu({
+                            x: e.clientX,
+                            y: e.clientY,
+                            gameId: g.id,
+                            gameName: g.latin_name,
+                        });
                     }}
                 >
           <span className="tile-cover">
@@ -56,7 +66,13 @@ export function GameGrid() {
                 items={
                     menu === null
                         ? []
-                        : buildGameContextMenuItems(t, dispatch, menu.gameId, closeMenu)
+                        : buildGameContextMenuItems(
+                            t,
+                            dispatch,
+                            menu.gameId,
+                            menu.gameName,
+                            closeMenu,
+                        )
                 }
             />
         </div>
