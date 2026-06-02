@@ -11,6 +11,7 @@ export const EMULATOR_DEFAULTS: SystemDefaults = {
     "boot-device": "auto",
     "aspect-mode": "4:3",
     crt: true,
+    graphicboard: "none",
     "window-mode": "windowed",
     "audio-volume": 1.0,
     soundboard: "86+26k",
@@ -23,6 +24,7 @@ export const EMULATOR_DEFAULTS: SystemDefaults = {
     "bios-rom": "",
     "font-rom": "",
     printer: "",
+    "enable-extractor": false,
 };
 
 const STRING_KEYS = [
@@ -31,6 +33,7 @@ const STRING_KEYS = [
     "force-gdc-clock",
     "boot-device",
     "aspect-mode",
+    "graphicboard",
     "window-mode",
     "soundboard",
     "midi",
@@ -46,6 +49,7 @@ const BOOL_KEYS = [
     "adpcm-ram",
     "ems",
     "xms",
+    "enable-extractor",
 ] as const satisfies readonly (keyof SystemDefaults)[];
 
 function systemConfigOverlay(

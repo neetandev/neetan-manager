@@ -7,7 +7,7 @@ import "./StatusBar.css";
 
 export function StatusBar() {
     const {t} = useTranslation();
-    const {system, selected, games} = useAppState();
+    const {system, selected, games, launch} = useAppState();
     const {rows, totalForSystem} = useFilteredGames();
     const version = useAppVersion();
 
@@ -16,7 +16,11 @@ export function StatusBar() {
     const systemName = SYSTEMS.find((s) => s.id === system)?.name ?? system;
 
     let center: string;
-    if (games.status === "loading" && games.rows.length === 0) {
+    if (launch.status === "launching") {
+        center = t("status.launching", {name: launch.gameName});
+    } else if (launch.status === "error") {
+        center = t("status.launchFailed", {error: launch.error ?? t("common.unknownError")});
+    } else if (games.status === "loading" && games.rows.length === 0) {
         center = `${systemName} · ${t("status.loading")}`;
     } else if (games.status === "error") {
         center = `${systemName} · ${t("status.failed", {error: games.error ?? t("common.unknownError")})}`;

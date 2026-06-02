@@ -90,6 +90,7 @@ export function useStrings() {
             },
             "aspect-mode": {name: t("upsert.fields.aspect-mode"), key: "aspect-mode"},
             crt: {name: t("upsert.fields.crt"), key: "crt"},
+            graphicboard: {name: t("upsert.fields.graphicboard"), key: "graphicboard"},
             "window-mode": {name: t("upsert.fields.window-mode"), key: "window-mode"},
             "audio-volume": {name: t("upsert.fields.audio-volume"), key: "audio-volume"},
             soundboard: {name: t("upsert.fields.soundboard"), key: "soundboard"},
@@ -116,6 +117,11 @@ export function useStrings() {
                 key: "printer",
                 help: t("upsert.fields.printer-help"),
                 help_emulator: t("upsert.fields.printer-help-emulator"),
+            },
+            "enable-extractor": {
+                name: t("upsert.fields.enable-extractor"),
+                key: "enable-extractor",
+                help: t("upsert.fields.enable-extractor-help"),
             },
         },
         drives: {

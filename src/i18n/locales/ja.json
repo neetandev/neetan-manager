@@ -13,7 +13,8 @@
     "delete": "削除",
     "edit": "編集",
     "duplicate": "複製",
-    "create": "作成"
+    "create": "作成",
+    "run": "実行"
   },
   "menu": {
     "file": "ファイル",
@@ -51,7 +52,9 @@
     "loading": "読み込み中…",
     "failed": "読み込みに失敗しました: {{error}}",
     "summary": "{{system}} · {{total}}件中 {{shown}}件表示",
-    "selected": "{{name}} を選択中"
+    "selected": "{{name}} を選択中",
+    "launching": "{{name}} を起動中…",
+    "launchFailed": "起動に失敗しました: {{error}}"
   },
   "gameTable": {
     "columnLatin": "英語名",
@@ -172,9 +175,10 @@
       "cpu-mode-help": "PC-9801 専用 - PC-9821 では無視されます。",
       "force-gdc-clock": "GDC クロックを強制",
       "boot-device": "起動デバイス",
-      "boot-device-help": "「os」はメディアなしで起動します。",
+      "boot-device-help": "「dos」はメディアなしで起動します。",
       "aspect-mode": "アスペクトモード",
       "crt": "CRT エフェクト",
+      "graphicboard": "グラフィックボード",
       "window-mode": "ウィンドウモード",
       "audio-volume": "マスター音量",
       "soundboard": "サウンドボード",
@@ -192,7 +196,9 @@
       "font-rom-help-emulator": "空白の場合、内蔵フォントが使用されます。",
       "printer": "プリンタ出力",
       "printer-help": "空白の場合、システムから継承します。設定する場合、ファイルが既に存在する必要があります。",
-      "printer-help-emulator": "空白の場合、プリンタ出力は無効です。設定する場合、ファイルが既に存在する必要があります。"
+      "printer-help-emulator": "空白の場合、プリンタ出力は無効です。設定する場合、ファイルが既に存在する必要があります。",
+      "enable-extractor": "テキスト抽出",
+      "enable-extractor-help": "画面上のテキストをシステムのクリップボードにコピーします。"
     },
     "drives": {
       "listMeta_one": "{{count}} 件のイメージ · ドラッグで並べ替え",

@@ -13,7 +13,8 @@
     "delete": "Delete",
     "edit": "Edit",
     "duplicate": "Duplicate",
-    "create": "Create"
+    "create": "Create",
+    "run": "Run"
   },
   "menu": {
     "file": "File",
@@ -51,7 +52,9 @@
     "loading": "loading…",
     "failed": "failed to load: {{error}}",
     "summary": "{{system}} · {{shown}} of {{total}} shown",
-    "selected": "{{name}} selected"
+    "selected": "{{name}} selected",
+    "launching": "Launching {{name}}…",
+    "launchFailed": "launch failed: {{error}}"
   },
   "gameTable": {
     "columnLatin": "English Name",
@@ -172,9 +175,10 @@
       "cpu-mode-help": "PC-9801 only - ignored on PC-9821.",
       "force-gdc-clock": "Force GDC clock",
       "boot-device": "Boot device",
-      "boot-device-help": "‘os’ boots without media.",
+      "boot-device-help": "‘dos’ boots without media.",
       "aspect-mode": "Aspect mode",
       "crt": "CRT effect",
+      "graphicboard": "Graphics board",
       "window-mode": "Window mode",
       "audio-volume": "Master volume",
       "soundboard": "Sound board",
@@ -192,7 +196,9 @@
       "font-rom-help-emulator": "Empty uses the built-in font.",
       "printer": "Printer output",
       "printer-help": "Empty inherits from the system. The file must already exist if set.",
-      "printer-help-emulator": "Empty disables printer output. The file must already exist if set."
+      "printer-help-emulator": "Empty disables printer output. The file must already exist if set.",
+      "enable-extractor": "Text extractor",
+      "enable-extractor-help": "Copies on-screen text to the system clipboard."
     },
     "drives": {
       "listMeta_one": "1 image · drag to reorder",

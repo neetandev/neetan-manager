@@ -72,6 +72,10 @@ export function setSystemConfig(
     return invoke<void>("set_system_config", {system, config});
 }
 
+export function launchGame(id: number): Promise<void> {
+    return invoke<void>("launch_game", {id});
+}
+
 export function createDiskImage(
     kind: "fdd" | "hdd",
     path: string,

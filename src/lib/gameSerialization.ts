@@ -26,6 +26,7 @@ const PERSISTED_DEFAULTABLE_KEYS = [
     "force-gdc-clock",
     "boot-device",
     "aspect-mode",
+    "graphicboard",
     "window-mode",
     "soundboard",
     "midi",
@@ -41,6 +42,7 @@ const PERSISTED_TRI_KEYS = [
     "adpcm-ram",
     "ems",
     "xms",
+    "enable-extractor",
 ] as const satisfies readonly (keyof GameUpsertForm)[];
 
 const LIST_BAY_KEYS = ["fdd1", "fdd2", "cdrom"] as const;

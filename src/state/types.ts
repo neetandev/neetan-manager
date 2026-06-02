@@ -38,6 +38,14 @@ export interface GamesSlice {
     error: string | null;
 }
 
+export type LaunchStatus = "idle" | "launching" | "error";
+
+export interface LaunchSlice {
+    status: LaunchStatus;
+    gameName: string | null;
+    error: string | null;
+}
+
 export interface AppState {
     theme: Theme;
     system: SystemId;
@@ -50,6 +58,7 @@ export interface AppState {
     configSystem: SystemId | null;
     systemConfigVersion: number;
     games: GamesSlice;
+    launch: LaunchSlice;
 }
 
 export type Action =
@@ -70,4 +79,8 @@ export type Action =
     | { type: "TOGGLE_THEME" }
     | { type: "LOAD_GAMES_PENDING" }
     | { type: "LOAD_GAMES_SUCCESS"; rows: Game[] }
-    | { type: "LOAD_GAMES_ERROR"; error: string };
+    | { type: "LOAD_GAMES_ERROR"; error: string }
+    | { type: "LAUNCH_PENDING"; name: string }
+    | { type: "LAUNCH_SUCCESS" }
+    | { type: "LAUNCH_ERROR"; error: string }
+    | { type: "LAUNCH_CLEAR" };

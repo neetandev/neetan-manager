@@ -566,16 +566,26 @@ fn merge_json(base: &mut Value, overlay: &Value) {
     }
 }
 
+/// neetan options whose boolean is a *bare flag* (presence-only, no value), as opposed
+/// to the usual on/off-valued boolean options (`--crt`, `--ems`, `--xms`, `--adpcm-ram`).
+/// neetan currently has exactly one: `--enable-extractor`.
+const BARE_FLAG_KEYS: &[&str] = &["enable-extractor"];
+
 /// Converts a merged JSON object into the emulator's CLI arguments.
 ///
-/// Convention (initial - easy to swap):
+/// Convention:
 /// - The top-level value MUST be an object.
 /// - A special key `"args"` (must be an array of strings or numbers) is emitted as raw, positional
 ///   arguments appended at the end.
-/// - Booleans: `true` emits `--<key>`, `false` is omitted.
+/// - Booleans map to neetan's two boolean shapes:
+///   - Keys in `BARE_FLAG_KEYS` (e.g. `enable-extractor`) are bare flags: `true` emits `--<key>`,
+///     `false` is omitted.
+///   - All other booleans are on/off-valued: `true` emits `--<key> on`, `false` emits
+///     `--<key> off`. `off` is emitted explicitly because these options default to *on* in neetan,
+///     so an Off must actively override the default.
 /// - Strings/numbers: emit `--<key>` `<stringified-value>`.
 /// - Arrays of primitives: emit `--<key>` `<value>` once per element.
-/// - Null: omitted.
+/// - Null: omitted (the option falls through to neetan's own default).
 /// - Nested objects under any key other than `args`: rejected.
 fn json_to_args(value: &Value) -> Result<Vec<String>, AppError> {
     let obj = value
@@ -592,8 +602,16 @@ fn json_to_args(value: &Value) -> Result<Vec<String>, AppError> {
         }
         match v {
             Value::Null => {}
-            Value::Bool(true) => flags.push(format!("--{k}")),
-            Value::Bool(false) => {}
+            Value::Bool(b) => {
+                if BARE_FLAG_KEYS.contains(&k.as_str()) {
+                    if *b {
+                        flags.push(format!("--{k}"));
+                    }
+                } else {
+                    flags.push(format!("--{k}"));
+                    flags.push(if *b { "on".into() } else { "off".into() });
+                }
+            }
             Value::String(s) => {
                 flags.push(format!("--{k}"));
                 flags.push(s.clone());
@@ -683,13 +701,35 @@ mod tests {
         let args = json_to_args(&v).unwrap();
         // serde_json::Value object iteration order matches insertion via BTreeMap unless
         // preserve_order is enabled - by default it sorts alphabetically.
-        assert_eq!(args, vec!["--fullscreen", "--width", "640"]);
+        // On/off-valued booleans emit an explicit `on`.
+        assert_eq!(args, vec!["--fullscreen", "on", "--width", "640"]);
     }
 
     #[test]
-    fn json_to_args_false_omits_flag() {
-        let v = json!({ "vsync": false });
-        assert!(json_to_args(&v).unwrap().is_empty());
+    fn json_to_args_bool_maps_on_off() {
+        // A non-bare-flag boolean emits `on`/`off` explicitly (neetan's `--crt on|off` shape).
+        assert_eq!(
+            json_to_args(&json!({ "crt": true })).unwrap(),
+            vec!["--crt", "on"]
+        );
+        assert_eq!(
+            json_to_args(&json!({ "crt": false })).unwrap(),
+            vec!["--crt", "off"]
+        );
+    }
+
+    #[test]
+    fn json_to_args_bare_flag() {
+        // `enable-extractor` is presence-only: `true` -> bare flag, `false` -> omitted.
+        assert_eq!(
+            json_to_args(&json!({ "enable-extractor": true })).unwrap(),
+            vec!["--enable-extractor"]
+        );
+        assert!(
+            json_to_args(&json!({ "enable-extractor": false }))
+                .unwrap()
+                .is_empty()
+        );
     }
 
     #[test]
@@ -718,7 +758,7 @@ mod tests {
         let v = json!({ "fullscreen": true, "args": ["--raw", "value"] });
         let args = json_to_args(&v).unwrap();
         // tail goes after flags
-        assert_eq!(args, vec!["--fullscreen", "--raw", "value"]);
+        assert_eq!(args, vec!["--fullscreen", "on", "--raw", "value"]);
     }
 
     #[test]

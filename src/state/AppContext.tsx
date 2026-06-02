@@ -27,6 +27,7 @@ const initialState: AppState = {
     configSystem: null,
     systemConfigVersion: 0,
     games: {status: "idle", rows: [], error: null},
+    launch: {status: "idle", gameName: null, error: null},
 };
 
 function reducer(state: AppState, action: Action): AppState {
@@ -90,6 +91,20 @@ function reducer(state: AppState, action: Action): AppState {
                 ...state,
                 games: {...state.games, status: "error", error: action.error},
             };
+        case "LAUNCH_PENDING":
+            return {
+                ...state,
+                launch: {status: "launching", gameName: action.name, error: null},
+            };
+        case "LAUNCH_SUCCESS":
+            return {...state, launch: {...state.launch, status: "idle", error: null}};
+        case "LAUNCH_ERROR":
+            return {
+                ...state,
+                launch: {...state.launch, status: "error", error: action.error},
+            };
+        case "LAUNCH_CLEAR":
+            return {...state, launch: {status: "idle", gameName: null, error: null}};
         default: {
             const _exhaustive: never = action;
             throw new Error(`Unhandled action: ${JSON.stringify(_exhaustive)}`);
