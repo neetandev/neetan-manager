@@ -1,3 +1,9 @@
+# Status
+
+This program is archives and is not maintained anymore. It has been replaced with a manager inside the emulator itself, which provide a seamless experience and support all machines.
+
+Please migrate to the native manager the emulator ships with.
+
 # Neetan (ねーたん) manager
 
 A GUI application to manage configurations for the emulator Neetan.
